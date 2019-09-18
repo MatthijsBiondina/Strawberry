@@ -31,7 +31,8 @@ with prog.context as q:
     Zgate(custom(q[1])) | q[2]
 
 eng = sf.Engine('fock', backend_options={"cutoff_dim": 15})
-result = eng.run(prog, run_options={shots=1, modes=None}, compile_options={})
+result = eng.run(prog, run_options={
+                 "shots": 1, "modes": None}, compile_options={})
 print(results.samples)
 print(result.state)
 state = result.state
