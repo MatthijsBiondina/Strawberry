@@ -3,13 +3,22 @@ import os
 from qiskit.visualization import plot_histogram
 
 
+def fname(path):
+    return path.split('/')[-1]
+
+
 def qdraw(circuit):
     circuit.draw(filename='./res/qdraw.png', output='mpl')
-    img = cv.imread('./res/qdraw.png')
-    cv.imshow("CIRCUIT", img)
-    cv.waitKey(-1)
+    render('./res/qdraw.png')
 
 
 def qhist(counts):
     img = plot_histogram(counts)
-    print(img)
+    img.savefig('./res/qhist.png')
+    render('./res/qhist.png')
+
+
+def render(path):
+    img = cv.imread(path)
+    cv.imshow(fname(path), img)
+    cv.waitKey(-1)
