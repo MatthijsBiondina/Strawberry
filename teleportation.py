@@ -44,3 +44,10 @@ print(rho2.shape)
 
 probs = np.real_if_close(np.diagonal(rho2))
 print(probs)
+
+from matplotlib import pyplot as plt
+plt.bar(range(7), probs[:7])
+plt.xlabel('Fock state')
+plt.ylabel('Marginal probability')
+plt.title('Mode 2')
+plt.show()
