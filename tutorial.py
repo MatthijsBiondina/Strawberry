@@ -2,6 +2,8 @@ import numpy as np
 from qiskit import QuantumCircuit, execute, Aer
 from qiskit.visualization import plot_histogram
 
+from src.utils.tools import *
+
 # Use Aer's qasm_simulator
 simulator = Aer.get_backend('qasm_simulator')
 
@@ -14,4 +16,4 @@ circuit.cx(0, 1)
 circuit.measure([0, 1], [0, 1])
 
 # Visualize the Circuit
-circuit.draw()
+qdraw(circuit)
