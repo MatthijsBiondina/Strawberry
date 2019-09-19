@@ -15,5 +15,13 @@ circuit.h(0)
 circuit.cx(0, 1)
 circuit.measure([0, 1], [0, 1])
 
+# Simulate the Experiment
+job = execute(circuit, simulator, shots=1000)
+result = job.result()
+counts = result.get_counts(circuit)
+print("\nTotal count for 00 and 11 are:", counts)
+
+plot_histogram(counts)
+
 # Visualize the Circuit
 qdraw(circuit)
