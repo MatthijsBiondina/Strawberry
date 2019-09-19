@@ -37,3 +37,7 @@ print(result.samples)
 print(result.state)
 state = result.state
 print(state.dm().shape)
+
+import numpy as np
+rho2 = np.einsum('kklij->ij', state.dm())
+print(rho2.shape)
