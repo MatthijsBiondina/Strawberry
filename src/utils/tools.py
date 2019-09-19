@@ -7,7 +7,7 @@ def qdraw(circuit):
         os.mkdir('./res')
     except FileExistsError:
         pass
-    circuit.draw(filename='./res/qdraw.png')
+    circuit.draw(filename='./res/qdraw.png',output='mpl')
     img = cv.imread('./res/qdraw.png')
     cv.imshow("CIRCUIT", img)
     cv.waitkey(-1)
