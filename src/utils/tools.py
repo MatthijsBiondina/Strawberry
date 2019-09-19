@@ -9,5 +9,5 @@ def qdraw(circuit):
         pass
     circuit.draw(filename='./res/qdraw.png')
     img = cv.imread('./res/qdraw.png')
-    cv.render(img)
+    cv.imshow("CIRCUIT", img)
     cv.waitkey(-1)
