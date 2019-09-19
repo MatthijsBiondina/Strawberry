@@ -41,3 +41,6 @@ print(state.dm().shape)
 import numpy as np
 rho2 = np.einsum('kkllij->ij', state.dm())
 print(rho2.shape)
+
+probs = np.real_if_close(np.diagonal(rho2))
+print(probs)
